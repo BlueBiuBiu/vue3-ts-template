@@ -1,10 +1,12 @@
 <template>
-  <div class="home">Home</div>
+  <div class="work-platform">
+    <h2>work-platform</h2>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="less" scoped>
-.home {
+.work-platform {
 }
 </style>

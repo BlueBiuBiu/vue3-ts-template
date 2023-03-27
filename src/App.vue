@@ -1,28 +1,19 @@
 <template>
-  <div class="app">{{ counter.counter }} - {{ counter.doubleCount }}</div>
-  <el-button>Default</el-button>
-  <el-button type="primary">Primary</el-button>
-  <el-button type="success">Success</el-button>
-  <el-icon class="is-loading">
-    <IEpLoading />
-  </el-icon>
-  <IEpEdit />
+  <div class="app">
+    <el-config-provider :locale="zhCn">
+      <router-view></router-view>
+    </el-config-provider>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { getMultidata } from "@/service/modules/home"
-import { onMounted } from "vue"
-import { useCounterStore } from "./store"
-const counter = useCounterStore()
-
-onMounted(() => {
-  getMultidata("/home/multidata").then((res) => {
-    console.log(res)
-  })
-})
+import { ElConfigProvider } from "element-plus"
+import zhCn from "element-plus/lib/locale/lang/zh-cn"
 </script>
 
 <style lang="less" scoped>
 .app {
+  width: 100%;
+  height: 100vh;
 }
 </style>
